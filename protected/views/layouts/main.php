@@ -13,6 +13,21 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/static/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/static/css/form.css" />
+	
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>-->
+	
+	<!--<?php
+		Yii::app()->clientScript->registerScript('mainmenu', "
+			$('#mainmenu>li>ul').hide();
+			$('#mainmenu>li').mouseover(function(){
+				$(this).siblings().find('ul:visible').slideUp(500);
+				$(this).find('ul:hidden').slideDown(500);
+			});
+		", CClientScript::POS_END);
+	?>-->
+	
+	<?php Yii::app()->clientScript->registerScriptFile('/static/js/mainmenu.js',CClientScript::POS_END);?>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -26,22 +41,31 @@
 	</div><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'Late Payments', 'url'=>array('/payments/late'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'New Payment', 'url'=>array('/payments/create'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Pay Wage', 'url'=>array('/wages/create'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Wages Coming Up', 'url'=>array('/wages/comingup'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Members', 'url'=>array('/members'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Teachers', 'url'=>array('/teachers'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Users', 'url'=>array('/users'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-				
-			),
-		)); ?>
+		<ul>
+			<li><a href="/site/index">Home</a></li>
+			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/members">Members</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/teachers">Teachers</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li id="mm_wages"><a href="#">Wages</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li id="mm_payments"><a href="#">Payments</a></li><?php endif; ?>
+			<?php if (Yii::app()->user->isGuest): ?><li><a href="/site/login">Login</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/site/logout">Logout<?php echo ' ('.Yii::app()->user->name.')'; ?></a></li><?php endif; ?>
+		</ul>
+		
+		<div id="wages_sub1">
+			<ul>
+				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/create">Pay Wage</a></li><?php endif; ?>
+				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/comingup">Wages coming up</a></li><?php endif; ?>
+			</ul>
+		</div>
+		<div id="payments_sub1">
+			<ul>
+				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/late">Late Payments</a></li><?php endif; ?>
+				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/create">New Payment</a></li><?php endif; ?>
+			</ul>
+		</div>
 	</div><!-- mainmenu -->
+	
+	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -53,7 +77,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by <a href="www.rodderscode.co.uk">Rodderscode</a>.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
