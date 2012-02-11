@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Teachers', 'url'=>array('create')),
-	array('label'=>'Manage Teachers', 'url'=>array('admin')),
+	//array('label'=>'Manage Teachers', 'url'=>array('admin')),
 );
 ?>
 
@@ -21,6 +21,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		'phone',
 		'facebook',
 		'next_wage_date',
+		array(
+			'class'=>'CButtonColumn',
+		),
 		),
 ));
 ?>

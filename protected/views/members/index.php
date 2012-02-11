@@ -20,6 +20,7 @@ $this->widget('zii.widgets.CListView', array(
 
 
 <?php
+/*
 $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$dataProvider,
 	//'class'=>'CButtonColumn',
@@ -36,4 +37,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		
 	),
 ));
+ */
+
 ?>

@@ -27,7 +27,7 @@ class WagesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'comingup'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -172,5 +172,22 @@ class WagesController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionComingup(){
+		
+		$days_from_now = date('Y-m-d', strtotime('8 days'));
+		
+		$dataProvider = new CActiveDataProvider('Teachers', array(
+			'criteria'=>array(
+				'condition'=>'next_wage_date <= '.$days_from_now,
+				'order'=>'created DESC',
+			),
+			
+		));
+		
+		$this->render('comingup', array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 }

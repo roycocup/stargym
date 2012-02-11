@@ -48,12 +48,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'email',
 		'phone',
 		'facebook',
-		/*
-		'last_wage_id',
-		'next_wage_id',
-		'created',
-		'modified',
-		*/
+		'next_wage_date',
 		array(
 			'class'=>'CButtonColumn',
 		),
