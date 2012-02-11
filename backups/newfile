@@ -1,0 +1,16 @@
+public function beforeSave()
+{
+	if ($this->isNewRecord) {
+		$this->created = new CDbExpression('NOW()');
+		$this->modified = new CDbExpression('NOW()');
+	} else {
+		$this->modified = new CDbExpression('NOW()');
+	}
+	return parent::beforeSave();
+}
+
+<?php $this->widget( 'ext.EJuiTimePicker.EJuiTimePicker', array(
+				'model' => $model, 
+				'attribute' => 'last_payment_id',
+				)); 
+		?>

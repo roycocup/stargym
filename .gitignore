@@ -1,0 +1,7 @@
+public/assets
+permissionSet.sh
+state.bin
+*.log
+protected/config/dev.php
+protected/config/config.php
+
