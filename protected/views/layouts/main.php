@@ -14,6 +14,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/static/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/static/css/form.css" />
 	
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/static/css/custom.css" />
+	
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
 	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>-->
 	
@@ -50,20 +52,21 @@
 			<?php if (Yii::app()->user->isGuest): ?><li><a href="/site/login">Login</a></li><?php endif; ?>
 			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/site/logout">Logout<?php echo ' ('.Yii::app()->user->name.')'; ?></a></li><?php endif; ?>
 		</ul>
-		
-		<div id="wages_sub1">
-			<ul>
-				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/create">Pay Wage</a></li><?php endif; ?>
-				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/comingup">Wages coming up</a></li><?php endif; ?>
-			</ul>
-		</div>
-		<div id="payments_sub1">
-			<ul>
-				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/late">Late Payments</a></li><?php endif; ?>
-				<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/create">New Payment</a></li><?php endif; ?>
-			</ul>
-		</div>
 	</div><!-- mainmenu -->
+	
+	<div id="wages_sub1">
+		<ul>
+			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/create">Pay Wage</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/comingup">Wages coming up</a></li><?php endif; ?>
+		</ul>
+	</div>
+
+	<div id="payments_sub1">
+		<ul>
+			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/late">Late Payments</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/create">New Payment</a></li><?php endif; ?>
+		</ul>
+	</div>
 	
 	
 	<?php if(isset($this->breadcrumbs)):?>

@@ -11,7 +11,29 @@ $this->menu=array(
 
 <h1>Members</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php
+$this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-)); ?>
+));
+?>
+
+
+<?php
+$this->widget('zii.widgets.grid.CGridView', array(
+	'dataProvider'=>$dataProvider,
+	//'class'=>'CButtonColumn',
+	'columns'=>array(
+		'nickname', 
+		'first_name', 
+		'last_name',
+		'email',
+		'next_payment_date',
+		array(
+			'name'=>'Date of Birth',
+			'value'=>'date("d M Y", strtotime($data->dob))',
+		),
+		
+	),
+));
+?>

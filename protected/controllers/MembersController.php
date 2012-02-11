@@ -50,8 +50,10 @@ class MembersController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
 		));
 	}
 
@@ -141,6 +143,7 @@ class MembersController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Members');
+		
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

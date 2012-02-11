@@ -1,0 +1,25 @@
+body {
+	//background-color: black;
+}
+
+
+
+#payments_sub1{
+	position: relative;
+	left:265px;
+	text-decoration: none;
+}
+#payments_sub1 ul{
+	list-style: none;
+}
+
+#wages_sub1{
+	position: relative;
+	left:205px;
+	text-decoration: none;
+}
+#wages_sub1 ul{
+	list-style: none;
+}
+
+

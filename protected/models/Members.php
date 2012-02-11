@@ -15,6 +15,8 @@
  * @property string $next_payment_date
  * @property string $created
  * @property string $modified
+ * 
+ * @property Payments[] $payments
  */
 class Members extends CActiveRecord
 {
@@ -109,7 +111,7 @@ class Members extends CActiveRecord
 		$criteria->compare('next_payment_date',$this->next_payment_date,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
-
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
