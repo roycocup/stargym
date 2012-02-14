@@ -1,25 +1,21 @@
-body {
-	//background-color: black;
+
+[id*=sub1] {
+	background-color: #06C; 
+	position: absolute; 
+	left:403px; 
+	text-decoration: none; 
+	padding:0;
 }
 
-
-
-#payments_sub1{
-	position: relative;
-	left:265px;
-	text-decoration: none;
-}
-#payments_sub1 ul{
+[id*=sub1] li a{
+	display:list-item;
 	list-style: none;
+	padding: 0;
 }
 
-#wages_sub1{
-	position: relative;
-	left:205px;
-	text-decoration: none;
-}
-#wages_sub1 ul{
-	list-style: none;
-}
+#payments_sub1{list-style: none; left: 462px;}
+
+#wages_sub1{list-style: none; }
+
 
 

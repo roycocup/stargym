@@ -14,3 +14,7 @@ $('#mm_payments').hover(function(){
 	payment_div.show();
 });
 
+$('.mm_item').hover(function(){
+	$('[id*=sub1]').hide();
+});
+

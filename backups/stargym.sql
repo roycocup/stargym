@@ -70,7 +70,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (2,'Rodrigo-Dias-trepeiro','Rodrigo','Dias','trepeiro','rodrigo.pitta@gmail.com','1976-09-01',NULL,'2012-03-02','2012-02-01 17:05:35','2012-02-02 16:35:25'),(3,'Douglas-Pitbull-Pitbull','Douglas','Pitbull','Pitbull','','1973-12-13',NULL,NULL,'2012-02-01 17:59:37','2012-02-02 16:43:44'),(4,'Ozy-Adam-Professor','Ozy','Adam','Professor','','1970-01-01',NULL,'2012-02-01','2012-02-03 11:20:07','2012-02-03 11:20:19');
+INSERT INTO `members` VALUES (2,'Rodrigo-Dias-trepeiro','Rodrigo','Dias','trepeiro','rodrigo.pitta@gmail.com','1976-09-01',NULL,'2012-03-02','2012-02-01 17:05:35','2012-02-02 16:35:25'),(3,'Douglas-Pitbull-Pitbull','Douglas','Pitbull','Pitbull','','1973-12-13',NULL,'2012-03-11','2012-02-01 17:59:37','2012-02-11 16:30:30'),(4,'Ozy-Adam-Professor','Ozy','Adam','Professor','','1970-01-01',NULL,'2012-02-01','2012-02-03 11:20:07','2012-02-03 11:20:19');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +92,7 @@ CREATE TABLE `payments` (
   PRIMARY KEY (`id`),
   KEY `member_id` (`member_id`),
   CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `payments` (
 
 LOCK TABLES `payments` WRITE;
 /*!40000 ALTER TABLE `payments` DISABLE KEYS */;
-INSERT INTO `payments` VALUES (3,2,50,'',NULL,'2012-02-02 16:32:33','2012-02-02 16:32:33'),(4,2,56,'',NULL,'2012-02-02 16:35:18','2012-02-02 16:35:18'),(5,2,50,'',NULL,'2012-02-02 16:35:25','2012-02-02 16:35:25'),(6,4,70,'',NULL,'2012-02-03 11:20:19','2012-02-03 11:20:19');
+INSERT INTO `payments` VALUES (3,2,50,'',NULL,'2012-02-02 16:32:33','2012-02-02 16:32:33'),(4,2,56,'',NULL,'2012-02-02 16:35:18','2012-02-02 16:35:18'),(5,2,50,'',NULL,'2012-02-02 16:35:25','2012-02-02 16:35:25'),(6,4,70,'',NULL,'2012-02-03 11:20:19','2012-02-03 11:20:19'),(7,3,70,'',NULL,'2012-02-11 16:30:30','2012-02-11 16:30:30');
 /*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +132,7 @@ CREATE TABLE `teachers` (
 
 LOCK TABLES `teachers` WRITE;
 /*!40000 ALTER TABLE `teachers` DISABLE KEYS */;
-INSERT INTO `teachers` VALUES (4,'Marco','Canha',NULL,NULL,NULL,NULL,'2012-02-01 18:28:38','2012-02-01 18:28:41'),(5,'Luiz','Ribeiro','porradalondres@hotmail.com','','','2012-02-28','2012-02-11 14:20:05','2012-02-11 14:20:05');
+INSERT INTO `teachers` VALUES (4,'Marco','Canha',NULL,NULL,NULL,'2012-02-11','2012-02-01 18:28:38','2012-02-01 18:28:41'),(5,'Luiz','Ribeiro','porradalondres@hotmail.com','','','2012-02-28','2012-02-11 14:20:05','2012-02-11 14:20:05');
 /*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,4 +204,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-02-11 15:34:13
+-- Dump completed on 2012-02-14 11:14:20

@@ -45,28 +45,26 @@
 	<div id="mainmenu">
 		<ul>
 			<li><a href="/site/index">Home</a></li>
-			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/members">Members</a></li><?php endif; ?>
-			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/teachers">Teachers</a></li><?php endif; ?>
-			<?php if (!Yii::app()->user->isGuest): ?><li id="mm_wages"><a href="#">Wages</a></li><?php endif; ?>
-			<?php if (!Yii::app()->user->isGuest): ?><li id="mm_payments"><a href="#">Payments</a></li><?php endif; ?>
-			<?php if (Yii::app()->user->isGuest): ?><li><a href="/site/login">Login</a></li><?php endif; ?>
-			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/site/logout">Logout<?php echo ' ('.Yii::app()->user->name.')'; ?></a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li class="mm_item"><a href="/members">Members</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li class="mm_item"><a href="/teachers">Teachers</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li id="mm_wages"><a href="#">Wages</a>
+				<ul id="wages_sub1">
+					<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/create">Pay Wage</a></li><?php endif; ?>
+					<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/comingup">Wages coming up</a></li><?php endif; ?>
+				</ul>
+			</li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li id="mm_payments"><a href="#">Payments</a>
+				<ul id="payments_sub1">
+					<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/late">Late Payments</a></li><?php endif; ?>
+					<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/create">New Payment</a></li><?php endif; ?>
+				</ul>
+			</li><?php endif; ?>
+			<?php if (Yii::app()->user->isGuest): ?><li class="mm_item"><a href="/site/login">Login</a></li><?php endif; ?>
+			<?php if (!Yii::app()->user->isGuest): ?><li class="mm_item"><a href="/site/logout">Logout<?php echo ' ('.Yii::app()->user->name.')'; ?></a></li><?php endif; ?>
 		</ul>
 	</div><!-- mainmenu -->
 	
-	<div id="wages_sub1">
-		<ul>
-			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/create">Pay Wage</a></li><?php endif; ?>
-			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/wages/comingup">Wages coming up</a></li><?php endif; ?>
-		</ul>
-	</div>
-
-	<div id="payments_sub1">
-		<ul>
-			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/late">Late Payments</a></li><?php endif; ?>
-			<?php if (!Yii::app()->user->isGuest): ?><li><a href="/payments/create">New Payment</a></li><?php endif; ?>
-		</ul>
-	</div>
+	
 	
 	
 	<?php if(isset($this->breadcrumbs)):?>
