@@ -11,7 +11,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'amount'); ?>
-		<?php echo $form->textField($model,'amount'); ?>
+		£<?php echo $form->textField($model,'amount', array('size'=>'3')); ?>
 		<?php echo $form->error($model,'amount'); ?>
 	</div>
 	
@@ -22,7 +22,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'payed'); ?>
+		<?php echo $form->labelEx($model,'payed', array('label'=>'Payed?')); ?>
 		<?php echo $form->checkbox($model,'payed'); ?>
 		<?php echo $form->error($model,'payed'); ?>
 	</div>

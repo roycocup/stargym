@@ -11,7 +11,10 @@ $this->menu=array(
 
 <h1>Late Payers</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+
+<?php
+$this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_latePayers',
-)); ?>
+));
+?>

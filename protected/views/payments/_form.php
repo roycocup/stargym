@@ -21,8 +21,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'value'); ?>
-		<?php echo $form->textField($model,'value'); ?>
+		<?php echo $form->labelEx($model,'value', array('lable'=>'Amount')); ?>
+		£<?php echo $form->textField($model,'value', array('size'=>3)); ?>
 		<?php echo $form->error($model,'value'); ?>
 	</div>
 
@@ -34,8 +34,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'extras_value'); ?>
-		<?php echo $form->textField($model,'extras_value'); ?>
+		<?php echo $form->labelEx($model,'extras_value', array('label'=>'Extras Amount')); ?>
+		£<?php echo $form->textField($model,'extras_value', array('size'=>3)); ?>
 		<?php echo $form->error($model,'extras_value'); ?>
 	</div>
 
